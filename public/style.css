@@ -6,7 +6,7 @@ html{
     background:linear-gradient(to bottom right,rgb(0, 179, 255),rgb(0, 28, 68));
     background-position: center;
   background-attachment: fixed;
-    zoom:80%;
+    
     
 }
 .main{
@@ -134,7 +134,7 @@ input{
 }
 .message-box{
     display: grid;
-    grid-template-rows: 1fr 1fr 5fr 1fr;
+    grid-template-rows: auto auto 5fr 1fr;
     height:43%;
     width:45% ;
      background: linear-gradient(to bottom right, #f0faff, #e3efff);
@@ -203,6 +203,7 @@ input{
 .error-text{
     color:red;
 }
+
 @media(max-width: 1240px){
         .main{
             width:80vw;
