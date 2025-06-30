@@ -160,7 +160,16 @@ input{
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.3;
-    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;                       
+  scrollbar-color: #aaaaaa transparent;
+}
+.msg-text::-webkit-scrollbar {
+  width: 6px;                                   /* Thin vertical scrollbar */
+}
+
+.msg-text::-webkit-scrollbar-track {
+  background: transparent;                      /* No visible track */
 }
 .msg-info{
     display: flex;
