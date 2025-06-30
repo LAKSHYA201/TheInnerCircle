@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Inner Circle</title>
+</head>
+<body>
+    <main class="main">
+        <div class="page-content-holder">
+            <nav>
+                <div class="site-title"><h1>Inner Circle</h1></div>
+                <div class="primary-btn-holder">
+                    <% if(isAuthenticated){%>
+                        <p>Welcome, <%= user.username%></p>
+                        <button class="nav-btn" onclick="window.location.href='/log-out'">Log Out!</button>
+                        <button class="nav-btn" onclick="window.location.href='/create-message'">Create Message</button>
+                        <%}else{%>
+                            <button onclick="window.location.href='/sign-up'" class="nav-btn">Sign Up</button>
+                            <button onclick="window.location.href='/log-in'" class="nav-btn">Log In</button>
+                            <% } %>
+                </div>
+            </nav>
+            <div class="messages-holder">
+                <%if(user && user.is_admin && user.membership==="elite"){%>
+                <% rows.forEach(function(row){%>
+                 <div class="message-box">
+                    <div class="msg-info">
+                        <div class="msg-author"><%=row.username%></div>
+                        <div class="msg-time"><%= new Date(row.timestamp).toLocaleString('en-IN', {
+                         dateStyle: 'medium',
+                          timeStyle: 'short'
+                          }) %>
+                        </div>
+                    </div>
+                    <div class="msg-title"><%=row.title.charAt(0).toUpperCase()+ row.title.slice(1)%></div>
+                    <div class="msg-text"><%=row.text.charAt(0).toUpperCase()+row.text.slice(1)%></div>
+                    <div class="delete-btn-area"><button class="delete-btn" onclick="window.location.href='/delete-message/<%=row.id%>'">x</button></div>
+                </div>
+               <% }) %>
+                <%}else{%>
+                <%if(user && user.membership==="elite"){%>
+                <% rows.forEach(function(row){%>
+                 <div class="message-box">
+                    <div class="msg-info">
+                        <div class="msg-author"><%=row.username%></div>
+                        <div class="msg-time"><%= new Date(row.timestamp).toLocaleString('en-IN', {
+                         dateStyle: 'medium',
+                          timeStyle: 'short'
+                          }) %>
+                        </div>
+                    </div>
+                    <div class="msg-title"><%=row.title.charAt(0).toUpperCase()+ row.title.slice(1)%></div>
+                    <div class="msg-text"><%=row.text.charAt(0).toUpperCase()+row.text.slice(1)%></div>
+                </div>
+               <% }) %>
+               <%}else{%>
+                  <% rows.forEach(function(row){%>
+                 <div class="message-box">
+                    <div class="msg-info">
+                        <div class="msg-author"><%=row.username.replace(/./g,'x')%></div>
+                        <div class="msg-time"><%= new Date(row.timestamp).toLocaleString('en-IN', {
+                         dateStyle: 'medium',
+                          timeStyle: 'short'
+                          }).replace(/./g,'x') %>
+                        </div>
+                    </div>
+                    <div class="msg-title"><%=row.title.charAt(0).toUpperCase()+ row.title.slice(1)%></div>
+                    <div class="msg-text"><%=row.text.charAt(0).toUpperCase()+row.text.slice(1)%></div>
+                </div>
+               <% }) %>
+                <%}%>
+                  <%} %>
+            </div>
+            <% if(user && user.membership==="Joinee"){%>
+            <p><a class="link" href="/elite-member">Want to become an Elite Member and see who posted these messages?</a></p>
+            <%}%>
+        </div>
+    </main>
+</body>
+</html>

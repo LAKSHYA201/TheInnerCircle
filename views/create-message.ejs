@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Inner Circle</title>
+</head>
+<body>
+    <main class="main">
+        <div class="page-content-holder">
+            <nav>
+                <div class="site-title"><h1>Inner Circle</h1></div>
+                <div class="primary-btn-holder"></div>
+            </nav>
+            <div class="messages-holder">
+                <div class="page-title"><h2>Create Message</h2></div>
+                <form action="/create-message" method="POST">
+                     <textarea id="message_title" name="message_title" placeholder="Title"></textarea>
+                     <textarea id="message-box" name="message" rows="6" cols="50" required></textarea><br>
+                     <button type="submit" class="submit-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
