@@ -24,7 +24,6 @@
 - **Passport.js** – Local authentication
 - **pg (node-postgres)** – PostgreSQL driver for Node.js
 - **express-session** – Session management
-- **connect-flash** – Flash messages (optional)
 - **express-validator** – Input validation and sanitization
 
 ### Frontend:
