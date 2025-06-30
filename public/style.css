@@ -143,6 +143,12 @@ input{
     white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  overflow-y: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+.message-box::-webkit-scrollbar {
+  display: none; 
 }
 .msg-text{
     white-space: normal;
