@@ -4,6 +4,8 @@ html{
     justify-content: center;
     align-items: center;
     background:linear-gradient(to bottom right,rgb(0, 179, 255),rgb(0, 28, 68));
+    background-position: center;
+  background-attachment: fixed;
     zoom:90%;
     
 }
